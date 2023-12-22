@@ -6,11 +6,16 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Layout from "./Layout";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import AuthProvider from "./Provider/AuthProvider";
+import { Box, Typography } from "@mui/material";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
+    children:[{
+      path:'login',
+      element:<Box><Typography>login</Typography></Box>
+    }]
   },
 ]);
 const queryClient = new QueryClient();
