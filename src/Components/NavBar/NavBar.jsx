@@ -17,8 +17,6 @@ import Button from "@mui/material/Button";
 import { Login } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 
-const navItems = ["Home", "About", "Contact"];
-
 function NavBar() {
   // const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -32,18 +30,35 @@ function NavBar() {
       onClick={handleDrawerToggle}
       sx={{ textAlign: "center", color: "black" }}
     >
-      <Typography variant="h6" sx={{ py: 2.1, bgcolor: "#a8dadc" }}>
+      <Typography
+        variant="h6"
+        sx={{ py: 2.1, bgcolor: "#a8dadc", fontWeight: 700 }}
+      >
         TASKU
       </Typography>
       <Divider />
       <List>
-        {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primary={item} />
-            </ListItemButton>
-          </ListItem>
-        ))}
+        <ListItem>
+          <ListItemButton >
+            <Link style={{color:"black",marginInline:"auto"}} to="/">
+              <ListItemText primary={"Home"} />
+            </Link>
+          </ListItemButton>
+        </ListItem>
+        <ListItem>
+          <ListItemButton >
+            <Link style={{color:"black",marginInline:"auto"}} to="/">
+              <ListItemText primary={"Home"} />
+            </Link>
+          </ListItemButton>
+        </ListItem>
+        <ListItem>
+          <ListItemButton >
+            <Link style={{color:"black",marginInline:"auto"}} to="/">
+              <ListItemText primary={"Home"} />
+            </Link>
+          </ListItemButton>
+        </ListItem>
       </List>
     </Box>
   );
@@ -59,29 +74,17 @@ function NavBar() {
             onClick={handleDrawerToggle}
             sx={{ mr: 2, display: { lg: "none" } }}
           >
-            <MenuIcon fontSize="large"/>
+            <MenuIcon fontSize="large" />
           </IconButton>
           <Typography
-          visibility={{lg:'hidden'}}
+            visibility={{ lg: "hidden" }}
             color={"black"}
             variant="h6"
             component="div"
-            sx={{ flexGrow: 1 }}
+            sx={{ flexGrow: 1, fontWeight: 700 }}
           >
             TASKU
           </Typography>
-          <Box>
-            <Link to="login">
-              <Button
-                variant="contained"
-                size="large"
-                sx={{ color: "#fff", bgcolor: "#003566" }}
-              >
-                LOGIN
-                <Login />
-              </Button>
-            </Link>
-          </Box>
         </Toolbar>
       </AppBar>
       <nav>

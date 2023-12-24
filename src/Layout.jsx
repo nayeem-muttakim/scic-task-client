@@ -10,25 +10,38 @@ import {
   Typography,
 } from "@mui/material";
 import NavBar from "./Components/NavBar/NavBar";
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import Footer from "./Components/Footer/Footer";
 
-const navItems = ["Home", "About", "Contact"];
 const Layout = () => {
   const drawer = (
     <Box sx={{ textAlign: "center", color: "black" }}>
-      <Typography variant="h6" sx={{ py: 2.1 }}>
+      <Typography variant="h5" sx={{ py: 2.1, fontWeight: 700 }}>
         TASKU
       </Typography>
       <Divider />
       <List>
-        {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primary={item} />
-            </ListItemButton>
-          </ListItem>
-        ))}
+        <ListItem>
+          <ListItemButton>
+            <Link style={{ color: "black", marginInline: "auto" }} to="/">
+              <ListItemText primary={"Home"} />
+            </Link>
+          </ListItemButton>
+        </ListItem>
+        <ListItem>
+          <ListItemButton>
+            <Link style={{ color: "black", marginInline: "auto" }} to="/">
+              <ListItemText primary={"Home"} />
+            </Link>
+          </ListItemButton>
+        </ListItem>
+        <ListItem>
+          <ListItemButton>
+            <Link style={{ color: "black", marginInline: "auto" }} to="/">
+              <ListItemText primary={"Home"} />
+            </Link>
+          </ListItemButton>
+        </ListItem>
       </List>
     </Box>
   );

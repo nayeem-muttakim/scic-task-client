@@ -9,7 +9,7 @@ const Footer = () => {
       color={"#fff"}
       width="-webkit-fill-available"
       position="absolute"
-      sx={{ bottom: "0px", pl: { sm: "15%", md: "25%", lg: "35%" } }}
+      sx={{ pl: { sm: "15%", md: "25%", lg: "35%" } }}
       display={"flex"}
       alignItems={"center"}
       // justifyContent={"space-evenly"}
