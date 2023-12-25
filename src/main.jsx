@@ -6,8 +6,10 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Layout from "./Layout";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import AuthProvider from "./Provider/AuthProvider";
-import { Box, Typography } from "@mui/material";
+
 import HomePage from "./Components/HomePage/HomePage";
+import SignIn from "./Components/Authentications/SignIn";
+import SignUp from "./Components/Authentications/SignUp";
 
 const router = createBrowserRouter([
   {
@@ -19,12 +21,12 @@ const router = createBrowserRouter([
         element: <HomePage />,
       },
       {
-        path: "login",
-        element: (
-          <Box>
-            <Typography>login</Typography>
-          </Box>
-        ),
+        path: "signIn",
+        element: <SignIn />,
+      },
+      {
+        path: "signUp",
+        element: <SignUp />,
       },
     ],
   },

@@ -1,5 +1,7 @@
+import { Box } from "@mui/material";
+
 const SignUp = () => {
-  return <div></div>;
+  return <Box>up</Box>;
 };
 
 export default SignUp;

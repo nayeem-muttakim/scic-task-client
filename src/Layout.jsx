@@ -23,22 +23,43 @@ const Layout = () => {
       <List>
         <ListItem>
           <ListItemButton>
-            <Link style={{ color: "black", marginInline: "auto" }} to="/">
+            <Link
+              style={{
+                color: "black",
+                marginInline: "auto",
+                textDecoration: "none",
+              }}
+              to="/"
+            >
               <ListItemText primary={"Home"} />
             </Link>
           </ListItemButton>
         </ListItem>
         <ListItem>
           <ListItemButton>
-            <Link style={{ color: "black", marginInline: "auto" }} to="/">
-              <ListItemText primary={"Home"} />
+            <Link
+              style={{
+                color: "black",
+                marginInline: "auto",
+                textDecoration: "none",
+              }}
+              to="/"
+            >
+              <ListItemText primary={"About"} />
             </Link>
           </ListItemButton>
         </ListItem>
         <ListItem>
           <ListItemButton>
-            <Link style={{ color: "black", marginInline: "auto" }} to="/">
-              <ListItemText primary={"Home"} />
+            <Link
+              style={{
+                color: "black",
+                marginInline: "auto",
+                textDecoration: "none",
+              }}
+              to="/"
+            >
+              <ListItemText primary={"Contact"} />
             </Link>
           </ListItemButton>
         </ListItem>
@@ -56,7 +77,7 @@ const Layout = () => {
             display: { xs: "none", lg: "block" },
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
-              width: 240,
+              width: 230,
               bgcolor: "inherit",
             },
           }}

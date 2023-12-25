@@ -20,7 +20,7 @@ const Banner = () => {
         className=" text-center"
       >
         <Box maxWidth={500}>
-          <Link to="login">
+          <Link to="signIn">
             <Button variant="contained">Let's Explore</Button>
           </Link>
         </Box>
