@@ -13,16 +13,25 @@ import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
-import { Login } from "@mui/icons-material";
+
 import { Link } from "react-router-dom";
+import { Avatar } from "@mui/material";
+import useAuth from "../../HOOKS/useAuth";
+import { Button } from "@mui/joy";
+import { Logout } from "@mui/icons-material";
 
 function NavBar() {
   // const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-
+  const { user, logOut } = useAuth();
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
+  };
+
+  const signOut = () => {
+    logOut()
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
   };
 
   const drawer = (
@@ -81,6 +90,27 @@ function NavBar() {
           </ListItemButton>
         </ListItem>
       </List>
+
+      {user && (
+        <Box
+          sx={{ position: "absolute", bottom: 0, bgcolor: "#457b9d" }}
+          px={8.2}
+          py={3}
+        >
+          <Button
+            onClick={signOut}
+            sx={{
+              bgcolor: "#95d5b2",
+              color: "black",
+              fontSize: 13,
+              fontWeight: 600,
+            }}
+            variant="contained"
+          >
+            SignOut <Logout sx={{ ml: 1 }} />
+          </Button>
+        </Box>
+      )}
     </Box>
   );
 
@@ -106,6 +136,7 @@ function NavBar() {
           >
             TASKU
           </Typography>
+          {user ? <>{"user"}</> : <Avatar />}
         </Toolbar>
       </AppBar>
       <nav>

@@ -12,7 +12,6 @@ const Footer = () => {
       sx={{ pl: { sm: "15%", md: "25%", lg: "35%" } }}
       display={"flex"}
       alignItems={"center"}
-      // justifyContent={"space-evenly"}
       p={4}
       gap={4}
     >

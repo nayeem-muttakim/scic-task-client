@@ -1,5 +1,6 @@
 import {
   Box,
+  Button,
   Divider,
   Drawer,
   List,
@@ -12,14 +13,25 @@ import {
 import NavBar from "./Components/NavBar/NavBar";
 import { Link, Outlet } from "react-router-dom";
 import Footer from "./Components/Footer/Footer";
+import useAuth from "./HOOKS/useAuth";
+import { Logout } from "@mui/icons-material";
 
 const Layout = () => {
+  const { user, logOut } = useAuth();
+
+  const signOut = () => {
+    logOut()
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+  };
+
   const drawer = (
     <Box sx={{ textAlign: "center", color: "black" }}>
       <Typography variant="h5" sx={{ py: 2.1, fontWeight: 700 }}>
         TASKU
       </Typography>
-      <Divider />
+
+      {/* pages */}
       <List>
         <ListItem>
           <ListItemButton>
@@ -64,6 +76,25 @@ const Layout = () => {
           </ListItemButton>
         </ListItem>
       </List>
+
+      {user  && <Box
+        sx={{ position: "absolute", bottom: 14, bgcolor: "#457b9d" }}
+        px={6.5}
+        py={3}
+      >
+        <Button
+          onClick={signOut}
+          sx={{
+            bgcolor: "#95d5b2",
+            color: "black",
+            fontSize: 13,
+            fontWeight: 600,
+          }}
+          variant="contained"
+        >
+          SignOut <Logout sx={{ ml: 1 }} />
+        </Button>
+      </Box>}
     </Box>
   );
   return (
