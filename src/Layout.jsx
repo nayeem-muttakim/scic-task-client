@@ -33,48 +33,63 @@ const Layout = () => {
 
       {/* pages */}
       <List>
-        <ListItem>
-          <ListItemButton>
-            <Link
+      <Link
               style={{
                 color: "black",
-                marginInline: "auto",
                 textDecoration: "none",
+              
               }}
               to="/"
             >
+        <ListItem  >
+  
+          <ListItemButton sx={{textAlign:"center"}}>
+         
               <ListItemText primary={"Home"} />
-            </Link>
+        
           </ListItemButton>
+         
         </ListItem>
-        <ListItem>
-          <ListItemButton>
-            <Link
+       
+        </Link>  
+        <Link
               style={{
                 color: "black",
-                marginInline: "auto",
                 textDecoration: "none",
+              
               }}
               to="/"
             >
+        <ListItem  >
+  
+          <ListItemButton sx={{textAlign:"center"}}>
+         
               <ListItemText primary={"About"} />
-            </Link>
+        
           </ListItemButton>
+         
         </ListItem>
-        <ListItem>
-          <ListItemButton>
-            <Link
+       
+        </Link>
+        <Link
               style={{
                 color: "black",
-                marginInline: "auto",
                 textDecoration: "none",
+              
               }}
               to="/"
             >
+        <ListItem  >
+  
+          <ListItemButton sx={{textAlign:"center"}}>
+         
               <ListItemText primary={"Contact"} />
-            </Link>
+        
           </ListItemButton>
+         
         </ListItem>
+       
+        </Link>
       </List>
 
       {user  && <Box

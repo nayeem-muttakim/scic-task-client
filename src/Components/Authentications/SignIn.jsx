@@ -3,6 +3,7 @@ import { Box, Paper, TextField, Typography } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { Form, Link } from "react-router-dom";
 import useAuth from "../../HOOKS/useAuth";
+import SocialAuth from "./SocialAuth/SocialAuth";
 
 const SignIn = () => {
   const { signIn } = useAuth();
@@ -26,10 +27,12 @@ const SignIn = () => {
         flexDirection: { xs: "column-reverse", sm: "row" },
         mx: { xs: 0, sm: 7, md: 25, xl: 50 },
         my: 2,
+        maxWidth:{xs:650,md:400}
       }}
       justifyContent={"space-evenly"}
       minHeight={"82vh"}
-      maxWidth={600}
+      gap={1}
+    
     >
       {/* Form */}
       <Paper elevation={4}>
@@ -61,6 +64,8 @@ const SignIn = () => {
           <Typography py={2} textAlign={"center"}>
             or SignIn with
           </Typography>
+
+         <Box mx={7}> <SocialAuth/></Box>
         </Box>
       </Paper>
       {/* Text */}
@@ -89,6 +94,7 @@ const SignIn = () => {
           </Link>
         </Box>
       </Paper>
+     
     </Box>
   );
 };
