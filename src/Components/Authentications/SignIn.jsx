@@ -29,7 +29,7 @@ const SignIn = () => {
       }}
       justifyContent={"space-evenly"}
       minHeight={"82vh"}
-      maxWidth={850}
+      maxWidth={600}
     >
       {/* Form */}
       <Paper elevation={4}>
